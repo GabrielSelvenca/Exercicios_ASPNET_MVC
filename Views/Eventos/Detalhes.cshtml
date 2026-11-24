@@ -1,0 +1,11 @@
+@model Evento
+
+<h1>@Model.Nome</h1>
+
+<p><strong>Descrição:</strong> @Model.Descricao</p>
+<p><strong>Local:</strong> @Model.Local</p>
+<p><strong>Data:</strong> @Model.DataEvento.ToString("dd/MM/yyyy")</p>
+<p><strong>Vagas:</strong> @Model.QuantidadeVagas</p>
+<p><strong>Valor do ingresso:</strong> @Model.ValorIngresso.ToString("C")</p>
+
+<a asp-action="Index">Voltar</a>

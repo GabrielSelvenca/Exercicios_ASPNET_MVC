@@ -1,0 +1,30 @@
+@model List<Evento>
+
+<h1>Eventos</h1>
+
+<a asp-action="Criar">Novo evento</a>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Local</th>
+        <th>Data do evento</th>
+        <th>Vagas</th>
+        <th>Valor</th>
+        <th>Detalhes</th>
+    </tr>
+
+    @foreach (var evento in Model){
+        <tr>
+            <td>@evento.Nome</td>
+            <td>@evento.Descricao</td>
+            <td>@evento.Local</td>
+            <td>@evento.DataEvento.ToString("dd/MM/yyyy")</td>
+            <td>@evento.QuantidadeVagas</td>
+            <td>@evento.ValorIngresso.ToString("C")</td>
+            <td><a asp-action="Detalhes" asp-route-id="@evento.Id">Ver</a></td>
+        </tr>
+    }
+
+</table>
